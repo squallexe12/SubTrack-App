@@ -11,12 +11,12 @@ import { SubscriptionForm } from './components/SubscriptionForm';
 
 // --- FIREBASE CONFIGURATION START ---
 const firebaseConfig = {
-  apiKey: "AIzaSyDQw3R7QcK_p-vfP3X-IoAyPbtLGcYGujw",
-  authDomain: "subtrack-app-578d3.firebaseapp.com",
-  projectId: "subtrack-app-578d3",
-  storageBucket: "subtrack-app-578d3.firebasestorage.app",
-  messagingSenderId: "61577496380",
-  appId: "1:61577496380:web:6619fbdaf3a5cffd264039",
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "...",
 };
 // --- FIREBASE CONFIGURATION END ---
 
