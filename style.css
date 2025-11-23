@@ -1,0 +1,135 @@
+
+/* Global Theme Variables */
+:root {
+  /* Light Mode (Default) */
+  --bg-primary: #f3f4f6;
+  --bg-gradient-from: #e0e7ff;
+  --bg-gradient-to: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --accent-primary: #2563eb; /* Deep Blue */
+  --accent-secondary: #60a5fa;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --card-hover-bg: rgba(255, 255, 255, 0.8);
+  --input-bg: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-primary: #121212;
+  --bg-gradient-from: #1f2937;
+  --bg-gradient-to: #121212;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --accent-primary: #6366f1; /* Neon Indigo */
+  --accent-secondary: #a855f7;
+  --glass-bg: rgba(30, 30, 30, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --card-hover-bg: rgba(255, 255, 255, 0.07);
+  --input-bg: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary); 
+  border-radius: 4px;
+  opacity: 0.5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary); 
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -10px var(--accent-primary);
+}
+
+[data-theme="dark"] .glass-card:hover {
+    box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.2);
+}
+[data-theme="light"] .glass-card:hover {
+    box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.15);
+}
+
+/* Form Elements */
+.glass-input {
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-secondary);
+  outline: none;
+}
+.glass-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Drawer Animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Utility Classes for specific theme elements */
+.text-accent {
+    color: var(--accent-primary);
+}
+.bg-accent {
+    background-color: var(--accent-primary);
+}
+.border-accent {
+    border-color: var(--accent-primary);
+}
